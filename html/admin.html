@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hospital Management System - Admin Dashboard</h1>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openAdminTab('doctors')">Manage Doctors</button>
+                <button class="tab-btn" onclick="openAdminTab('patients')">Manage Patients</button>
+            </div>
+
+            <!-- Doctors Management Tab -->
+            <div id="doctors" class="tab-content active">
+                <h2>Doctor Management</h2>
+                <button id="add-doctor-btn" class="btn">Add New Doctor</button>
+                
+                <div id="doctor-form" class="form-modal" style="display:none;">
+                    <form id="doctorForm">
+                        <h3>Doctor Details</h3>
+                        <div class="form-group">
+                            <label for="doctor-name">Full Name</label>
+                            <input type="text" id="doctor-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-email">Email</label>
+                            <input type="email" id="doctor-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-specialization">Specialization</label>
+                            <input type="text" id="doctor-specialization" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-phone">Phone</label>
+                            <input type="tel" id="doctor-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor-address">Address</label>
+                            <textarea id="doctor-address" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Save</button>
+                        <button type="button" id="cancel-doctor" class="btn cancel">Cancel</button>
+                    </form>
+                </div>
+
+                <table id="doctors-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Specialization</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Doctors will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Patients Management Tab -->
+            <div id="patients" class="tab-content">
+                <h2>Patient Management</h2>
+                <button id="add-patient-btn" class="btn">Add New Patient</button>
+                
+                <div id="patient-form" class="form-modal" style="display:none;">
+                    <form id="patientForm">
+                        <h3>Patient Details</h3>
+                        <div class="form-group">
+                            <label for="patient-name">Full Name</label>
+                            <input type="text" id="patient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-email">Email</label>
+                            <input type="email" id="patient-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-dob">Date of Birth</label>
+                            <input type="date" id="patient-dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-gender">Gender</label>
+                            <select id="patient-gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-phone">Phone</label>
+                            <input type="tel" id="patient-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-address">Address</label>
+                            <textarea id="patient-address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-medical-history">Medical History</label>
+                            <textarea id="patient-medical-history"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Save</button>
+                        <button type="button" id="cancel-patient" class="btn cancel">Cancel</button>
+                    </form>
+                </div>
+
+                <table id="patients-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Patients will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+      
+
+            <!-- Patients Management Tab -->
+            <div id="patients" class="tab-content">
+                <h2>Patient Management</h2>
+                <button id="add-patient-btn" class="btn">Add New Patient</button>
+                
+                <div id="patient-form" class="form-modal" style="display:none;">
+                    <form id="patientForm">
+                        <h3>Patient Details</h3>
+                        <div class="form-group">
+                            <label for="patient-name">Full Name</label>
+                            <input type="text" id="patient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-email">Email</label>
+                            <input type="email" id="patient-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-dob">Date of Birth</label>
+                            <input type="date" id="patient-dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-gender">Gender</label>
+                            <select id="patient-gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-phone">Phone</label>
+                            <input type="tel" id="patient-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-address">Address</label>
+                            <textarea id="patient-address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient-medical-history">Medical History</label>
+                            <textarea id="patient-medical-history"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Save</button>
+                        <button type="button" id="cancel-patient" class="btn cancel">Cancel</button>
+                    </form>
+                </div>
+
+                <table id="patients-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Patients will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Hospital Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

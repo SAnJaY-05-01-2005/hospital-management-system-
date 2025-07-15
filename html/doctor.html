@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hospital Management System - Doctor Dashboard</h1>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard">
+            <div class="profile-section">
+                <h2>My Profile</h2>
+                <div id="doctor-profile">
+                    <!-- Profile will be populated here by JavaScript -->
+                </div>
+                <button id="edit-profile-btn" class="btn">Edit Profile</button>
+                
+                <div id="profile-form" class="form-modal" style="display:none;">
+                    <form id="doctorProfileForm">
+                        <h3>Edit Profile</h3>
+                        <div class="form-group">
+                            <label for="edit-doctor-name">Full Name</label>
+                            <input type="text" id="edit-doctor-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-doctor-email">Email</label>
+                            <input type="email" id="edit-doctor-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-doctor-specialization">Specialization</label>
+                            <input type="text" id="edit-doctor-specialization" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-doctor-phone">Phone</label>
+                            <input type="tel" id="edit-doctor-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-doctor-address">Address</label>
+                            <textarea id="edit-doctor-address" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Save Changes</button>
+                        <button type="button" id="cancel-profile" class="btn cancel">Cancel</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="patients-section">
+                <h2>My Patients</h2>
+                <table id="doctor-patients-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Medical History</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Patients will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Hospital Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/doctor.js"></script>
+</body>
+</html>
